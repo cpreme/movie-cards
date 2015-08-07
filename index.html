@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <link rel="stylesheet" href="cards.css">
+  
+  <title>Corey's Movie Cards</title>
+</head>
+<body>
+  <div id="nav-header">
+  <span id="nav-header">Stupid Movie Card Thing</span>
+  <div id="float-right">
+  <span id="genre" class="button-header">All</span>
+  <span id="genre" class="button-header">Comedy</span>
+  <span id="genre" class="button-header">Drama</span>
+  <span id="genre" class="button-header">Family</span>
+  <span id="genre" class="button-header">Action</span>
+  </div>
+  </div>
+
+  <main>
+    <!-- <div id="nav-header">Movie Thing</div> -->
+    <!-- <input placeholder="**need search text**" x-webkit-speech autocomplete="on" />
+    <header></header>
+    <section class="card">
+      <h1>Welcome to Wurtigo?</h1>
+      <h2>We'll help you figure out wurtigo! <span class="blue">Note: (*)</span> Wurtigo is in Beta. There will be bugs!</h2>
+    </section> -->
+
+    <!--
+    <div id="cards-container"></div>
+  
+    <script id="my-EventTemplate" type="x-tmpl-mustache">
+    <section class="card">
+      <h1>{{event}}<span class="blue">*</span></h1>
+      <h2>{{location}}</h2>
+      <span class="r-title">{{date}}</span>
+      <img src={{image}} class='hotel'></img>
+    </section> 
+    </script>
+  -->
+
+  <!-- container that we'll append a bunch of cards into -->
+  <div id="cards-container"></div>
+
+  <!-- a mas that we'll use to dim the lights -->
+  <div id="mask"></div>
+
+  <!-- a popup lightbox that drills into the card data -->
+  <div id="cards-lightbox"></div>
+
+  <!-- movies card template -->
+  <script id="my-Movies-template" type="x-tmpl-mustache">
+  <div id={{id}} class="card">
+  <img src="{{image}}" class="leftof" style="width: 119.66px; length: 119.66px;" alt="">
+  <h1>{{title}}</h1>
+  <h2>{{teaser}}<span class="blue">Learn more</span></h2><hr>
+  <h2 id={{id}} class="blue button">Watch Trailer<img src="ic_play_circle_filled_black_24px.svg" height="20px" width="20px" padding-left="10px"></h2>
+  <h2 class="blue button"><a href="{{showtimes}}" target="_blank">Get Showtimes<img src="ic_launch_black_24px.svg" height="20px" width="20px" margin-left="5px"></a></h2>
+  </div>
+  </script>
+
+  <!-- lightbox template -->
+  <script id="my-lightbox-template" type="x-tmpl-mustache">
+  <div id={{id}}>
+  <section class="lightbox">
+  <iframe id="ytplayer" type="text/html" src="{{trailer}}?controls=0&showinfo=0&origin=http://example.com" frameborder="0" width="560" height="315"></iframe>
+  </section>
+  </div>
+  </script>
+
+
+
+  <!-- don't have script tags within divs. they need to be outside, at the bottom --> 
+
+<!-- <section class="card">
+      <img src="insideout.jpeg" class="leftof" style="width: 119.66px; length: 119.66px;" alt="">
+      <h1>Inside Out</h1>
+      <h2>Riley (Kaitlyn Dias) is a happy, hockey-loving 11-year-old Midwestern girl, but her world turns upside-down when she and her parents move to San Francisco. Riley's...<span class="blue">Learn more</span></h2><hr>
+      <h2 class="blue">Watch the trailer</h2>
+    </section>
+
+  </section> -->
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.2/mustache.min.js"></script>
+<script src="cards.js"></script>
+
+</body>
+</html>
+

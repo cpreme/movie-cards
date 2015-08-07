@@ -1,0 +1,465 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,900,700italic,900italic);
+
+@import url(http://www.oceanicviewstudios.com/css/font-awesome.min.css);
+
+* { font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle;}
+
+/*body { background:#f5f5f5; color:gray; }*/
+body {
+  background-color: #EEEEEE;
+  color: white;
+  margin: 0;
+}
+
+#nav-header {
+  background-color: #4285F4;
+  width: 100%;
+  height: 58px;
+  font-size: 34px;
+  font-weight: lighter;
+  padding-left: 25px; 
+  padding-top: 10px;
+  /*position: fixed;*/
+  z-index: 1
+}
+
+main {
+  background:#EEEEEE;
+  text-align: center;
+/*border-radius:.25rem; Rounded edge or no? */
+  display:block;
+  margin:3vh auto;
+  overflow:hidden;
+  padding:1.5rem 0 0;
+  position:relative;
+  /*width:30rem;*/
+}
+
+header {
+  background:url('header.jpg') center center;
+  background-size:cover;
+  height:10rem;
+  position:absolute;
+  top:0; left:0; right:0;
+  transition:transform .5s, opacity .3s;
+  z-index:0;
+}
+
+input, .card {
+  position:relative;
+  z-index:2;
+}
+
+input {
+  border:0;
+  border-radius:3px;
+  box-shadow:0 1px 2px #aaa;
+  display:block;
+  font-size:1.2rem;
+  font-weight:300;
+  margin:4.5rem 1rem 2rem;
+  padding:.75rem 1rem;
+  transition:.5s, margin-bottom .15s;
+  width:26rem;
+}
+
+#float-right {
+  float: right;
+  margin-right: 60px;
+  padding-right: 25px;
+}
+
+.icon {
+  max-height: 20px
+  padding-left: 10px;
+}
+
+input:focus {
+  margin:0 1rem 1rem;
+  outline:0;
+}
+
+input:focus + header {
+  transform:translate3d(0,-10rem,0);
+  opacity:0;
+}
+
+.leftof {
+  float: left;
+  padding: 0 15px 0 0;
+  max-height: 180px;
+  max-width: 134px;
+}
+
+.rightof {
+  float: right;
+}
+
+hr {
+  background: #f3f3f3; 
+  border: none; 
+  clear: both; 
+  float: none;
+  height: 1px;
+  width: 100%; 
+}
+
+/* Alignment */
+.align-center {
+  text-align: center;
+}
+
+.img-align-c {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/* unvisited link */
+a:link {
+    color: #27b3dd;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #27b3dd;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
+
+.card {
+  display: inline-block;
+  width: 408px;
+  height: 216px;
+  vertical-align: top;
+  /*height: 200px;*/
+  animation:fly-in-from-left .5s 1s ease both;
+  background:white;
+  border-radius:3px;
+  box-shadow:0 1px 2px #aaa;
+  margin:5px;
+  padding:1rem 1rem 1.5rem 1.5rem;
+  user-select:none;
+  transform-origin:top left;
+}
+
+.lightbox {
+  /*display: ;*/
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  /*background-color: black;*/
+  /*-moz-opacity: 0.8;*/
+  /*opacity:.80;*/
+  z-index: 100;
+}
+
+/*.lightbox {
+  position: fixed;
+  left: 50%;
+  top: 35px;
+  width: 560px;
+  height: 315px;
+  margin: 0 0 0 -37.5%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-radius: 3px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  z-index: 100;
+}*/
+
+#mask {
+  position: fixed;
+  display: none;
+  opacity: .8;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 50;
+}
+
+.intro {
+  display: inline-block;
+  width: inherit;
+  vertical-align: top;
+  /*height: 200px;*/
+  animation:fly-in-from-left .5s 1s ease both;
+  background:white;
+  border-radius:3px;
+  box-shadow:0 1px 2px #aaa;
+  margin:5px;
+  padding:1rem 1rem 1.5rem 1.5rem;
+  user-select:none;
+  transform-origin:top left;
+}
+.card:nth-child(even){
+  animation-delay:none;
+  animation-name:fly-in-from-right;
+  transform-origin:top right;
+}
+
+@keyframes fly-in-from-left {
+  from {
+    transform:translateY(15rem) rotate(15deg);
+    opacity:0;
+  }
+}
+
+@keyframes fly-in-from-right {
+  from {
+    transform:translateY(15rem) rotate(-15deg);
+    opacity:0;
+  }
+}
+
+/*.action:after {
+  border-radius:50%;
+  color:gray;
+  content:"\f142";
+  font-family: FontAwesome;
+  font-size:.9rem;
+  line-height:1rem;
+  pointer-events:none;
+  position:absolute;
+  text-align:center;
+  top:1.5rem; right:1rem;
+  width:1rem;
+}*/
+
+/*.info:after {
+  border: 1px solid;
+  border-radius:50%;
+  color:gray;
+  content:"\f129";
+  font-family: FontAwesome;
+  font-size:.6rem;
+  line-height:1rem;
+  pointer-events:none;
+  position:absolute;
+  text-align:center;
+  top:1.5rem; right:1rem;
+  width:1rem;
+}*/
+
+
+h1 {
+  color: #707070;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  margin: 0;
+}
+
+h2 {
+  font-size:.9rem;
+  text-align: left;
+  color:gray;
+  font-weight:400;
+  line-height: 1.250rem;
+  margin: 0;
+}
+
+#ratings {
+  text-align: left;
+  display: inline-block;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  /*font-family: Arial;*/
+  color: #27b3dd;
+  font-size: 13px;
+  /*background: #3498db;*/
+  padding: 10px 20px 10px 20px;
+  border: solid gray 1px;
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* Colors */
+.r-title {
+  color: #ff4444;
+  text-align: left;
+}
+
+.o-title {
+  color: #ff8800;
+}
+
+.g-title {
+  color: #70ae32;
+}
+
+.red {
+  color: #c2384f;
+}
+
+.green {
+  color: #70ae32;
+}
+
+.l-green {
+  color: #99cc00;
+}
+
+.blue {
+  color: #27b3dd;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.gy-title {
+  color: #c6c6c6;
+}
+
+.description {
+  color: #c6c6c6;
+  font-style: italic;
+}
+
+span.offset {
+  margin-left: 65px;
+}
+
+.center {
+  text-align: center;
+}
+
+.x-large {
+  font-size: 2rem;
+  margin: 25px 0 0 0;
+}
+
+.images {
+  background: #f0f0f0;
+  border-color: #f0f0f0;
+  border-style: solid;
+  border-width: 1px 0;
+  height: 145px;
+  margin: 16px -16px 0 0;
+  overflow: hidden;
+  width: 400px;
+}
+
+.images img {
+float: left;
+height: 145px;
+}
+
+img {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.button-header {
+  text-align: left;
+  display: inline-block;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  /*font-family: Arial;*/
+  color: white;
+  font-size: 13px;
+  /*background: #3498db;*/
+  padding: 10px 20px 10px 20px;
+  border: solid white 1px;
+  text-decoration: none;
+}
+
+.button-header:hover {
+  background: #3cb0fd;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button {
+  text-align: left;
+  display: inline-block;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  /*font-family: Arial;*/
+  color: #27b3dd;
+  font-size: 13px;
+  /*background: #3498db;*/
+  padding: 10px 20px 10px 20px;
+  border: #EEEEEE 1px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #3cb0fd;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Grid boundary for all layouts. */
+[class^="layout-"] {
+  position: relative;
+  left: -29px;
+  right: 29px;
+  width: 618px;
+  height: 100%;
+  overflow: hidden;
+}
+
+[class^="layout-"]:after {
+  clear: both;
+}
+
+/* Div padding and borders for all layouts. */
+[class^="layout-"] > div {
+  float: left;
+  height: 100%;
+  padding: 10px 29px 10px 30px;
+  border-right: 1px solid #f3f3f3;
+  overflow: hidden;
+}
+
+[class^="layout-"] > div:last-child {
+  border-right: none;
+  padding-right: 30px;
+}
+
+/* Allow the borders to be suppressed */
+[class^="layout-"].no-border > div {
+  border-right: none;
+  padding-right: 30px;
+}
+
